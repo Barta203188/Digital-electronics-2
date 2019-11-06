@@ -94,7 +94,7 @@ ISR(ADC_vect)
     value = ADC;
 
     lcd_clrscr();
-    lcd_puts("Voltage value");
+    lcd_puts("Voltage value :)");
     lcd_gotoxy(0, 1);
     itoa(value, uart_string, 10);
     //lcd_puts(uart_string);
@@ -102,11 +102,11 @@ ISR(ADC_vect)
    if(value < 90)
     {
       
-        uart_puts("\r\nRIGHT");
+        uart_puts("\r\n\033[4;32mRIGHT\033[0m");
         
         lcd_puts(uart_string);
         lcd_gotoxy(6, 1);
-        lcd_puts("RIGHT");
+        lcd_puts("RIGHT   :(");
     }
         
     else if(value >= 90 && value <= 110)
