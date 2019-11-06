@@ -41,8 +41,8 @@ int main(void)
     DDRD &= ~_BV(BTN);
     PORTD |= _BV(BTN);                /* nastaveni pull up rezistoru*/
     /* Turn LED off */
-    //PORTB &= ~_BV(LED_GREEN);         /* PORTB = PORTB and (0010 0000) */
-    //PORTB &= ~_BV(LED_RED);
+    PORTB &= ~_BV(LED_GREEN);         /* PORTB = PORTB and (0010 0000) */
+    PORTB &= ~_BV(LED_RED);
     /* Infinite loop */
     for (;;)
     {
