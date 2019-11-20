@@ -1,3 +1,5 @@
+
+
 /***********************************************************************
  * 
  * Implementation of LFSR-based (Linear Feedback Shift Register) 
@@ -94,7 +96,7 @@ int main(void)
 
     /* Timer1
      * TODO: Enable overflow interrupt every 33 msec. */
-     
+    
     TIM_config_prescaler(TIM1 ,TIM_PRESC_8);
     TIM_config_interrupt(TIM1 ,TIM_OVERFLOW_ENABLE);
 
