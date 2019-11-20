@@ -41,15 +41,13 @@ int main(void)
 {
     GPIO_config_output(&DDRB, burst_5);
     GPIO_write(&PORTB, burst_5, 1);
-    
-    TIM_config_prescaler(TIM1 ,TIM_PRESC_8);
-    TIM_config_interrupt(TIM1 ,TIM_OVERFLOW_ENABLE);
+ 
 
 
     /* Infinite loop */
       for (;;)
       {
-         
+       burst_asm(0);
       }
     return (0);
 }
