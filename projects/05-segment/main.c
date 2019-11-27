@@ -41,7 +41,7 @@ int main(void)
 {
     /* D1 led */
     // TODO: Configure D1 led at Multi-Function Shield
-    GPIO_config_output(&DDRB , LED_D1);
+    //GPIO_config_output(&DDRB , LED_D1);
     /* Pin Change Interrupts 11:9 */
     // TODO: Configure Pin Change Interrupts 11, 10, and 9
     PCICR |= _BV(PCIE1);
