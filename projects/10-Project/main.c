@@ -33,7 +33,7 @@
  *  Input:  None
  *  Return: None
  */
-    int i = 0;
+      int i = 0;
 int main(void)
 {
     /* D1 led */
@@ -48,7 +48,13 @@ int main(void)
     TIM_config_interrupt(TIM1, TIM_OVERFLOW_ENABLE);
     /* 7-segment display interface */
     // TODO: Configure 7-segment display pins
-    
+    GPIO_config_output(&DDRB , SEGMENT_DATA);
+    GPIO_write(&PORTB, SEGMENT_DATA, 0);
+    GPIO_config_output(&DDRD , SEGMENT_CLK);
+    GPIO_write(&PORTD, SEGMENT_CLK, 0);
+    GPIO_config_output(&DDRD , SEGMENT_LATCH);
+    GPIO_write(&PORTD, SEGMENT_LATCH, 0);    
+
     /* Enable interrupts by setting the global interrupt mask */
     sei();
 
@@ -85,6 +91,4 @@ ISR(TIMER1_OVF_vect)
     }
     
 }*/
-
-
 
