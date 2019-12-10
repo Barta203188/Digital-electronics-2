@@ -18,9 +18,9 @@
 
 /* Typedef -----------------------------------------------------------*/
 /* Define ------------------------------------------------------------*/
-#define LED_RED     PB0
-#define LED_GREEN   PB5
-#define BTN         PD2
+#define LED_RED     PD2
+//#define LED_GREEN   PB5
+#define BTN         PD3
 #define BLINK_DELAY 500
 
 
@@ -36,13 +36,13 @@
 int main(void)
 {
     /* Set output pin */
-    DDRB |= _BV(LED_GREEN);           /* DDRB = DDRB or (0010 0000) */
-    DDRB |= _BV(LED_RED);
+    //DDRD |= _BV(LED_GREEN);           /* DDRB = DDRB or (0010 0000) */
+    DDRD |= _BV(LED_RED);
     DDRD &= ~_BV(BTN);
     PORTD |= _BV(BTN);                /* nastaveni pull up rezistoru*/
     /* Turn LED off */
-    PORTB &= ~_BV(LED_GREEN);         /* PORTB = PORTB and (0010 0000) */
-    PORTB &= ~_BV(LED_RED);
+    //PORTB &= ~_BV(LED_GREEN);         /* PORTB = PORTB and (0010 0000) */
+    PORTD &= ~_BV(LED_RED);
     /* Infinite loop */
     for (;;)
     {
@@ -50,8 +50,8 @@ int main(void)
         {
         /* Invert LED and delay */
         
-        PORTB ^= _BV(LED_GREEN);      /* PORTB = PORTB xor (0010 0000) */
-        PORTB ^= _BV(LED_RED);
+        //PORTB ^= _BV(LED_GREEN);      /* PORTB = PORTB xor (0010 0000) */
+        PORTD ^= _BV(LED_RED);
         _delay_ms(BLINK_DELAY);     /* Wait for several milisecs */
         }
     }
