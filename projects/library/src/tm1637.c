@@ -54,7 +54,6 @@ PROGMEM const uint8_t _digit2segments[] =
 void
 TM1637_init(const uint8_t enable, const uint8_t brightness)
 {
-
 	DDRD |= (_BV(TM1637_DIO_PIN)|_BV(TM1637_CLK_PIN));
 	PORTD &= ~(_BV(TM1637_DIO_PIN)|_BV(TM1637_CLK_PIN));
 	TM1637_send_config(enable, brightness);
