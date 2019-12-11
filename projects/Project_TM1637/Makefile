@@ -37,11 +37,13 @@ LDFLAGS = -mmcu=$(MCU) -Wl,-Map=$(TARGET).map -Wl,--cref
 # We define all the targets that are not files
 .PHONY = all list size flash clean
 SHELL = /bin/sh
+include ../projects.in
 LIBRARY_DIR = ../library
 
 # The result of wildcard is a space-separated list of the names of
 # existing files that match the pattern.
 SRCS := main.c ../library/src/tm1637.c
+SRCS += $(LIBRARY_DIR)/src/gpio.c
 
 # This is called as substitution reference. In this case, if SRCS has
 # values 'foo.c bar.c', OBJS variable will have 'foo.o bar.o'.

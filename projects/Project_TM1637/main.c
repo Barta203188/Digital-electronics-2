@@ -11,11 +11,14 @@
 #include <util/delay.h>
 #include <stdbool.h>
 #include "tm1637.h"
+#include <avr/interrupt.h>
+#include "gpio.h"
 
 #define MAX_NUMBER_OF_DIGITS 10
 #define LIMIT_OF_MINUTES 10
 #define MS_IN_ONE_SECOND 1000
 #define TENS_OF_SECONDS_IN_ONE_MINUTE 6
+#define BTN_S1									PC1 // PCINT 9
 
 int main(void)
 {
@@ -26,6 +29,17 @@ int main(void)
 	/* setup */
 	TM1637_init(1/*enable*/, 7/*brightness*/);
 	TM1637_clear();
+
+/*	GPIO_config_input(&DDRB , BTN_S1);
+
+
+	PCICR |= _BV(PCIE1);
+	PCMSK1 |= _BV(PCINT9);*/
+
+/*	TIM_config_prescaler(TIM1, TIM_PRESC_256);
+    TIM_config_interrupt(TIM1, TIM_OVERFLOW_ENABLE);
+*/
+	sei ();
 
 	/* loop */
 	while (1) {
@@ -48,3 +62,9 @@ int main(void)
 			seconds++;
 		}
 }
+
+/*ISR(PCINT9_vect)
+{
+
+	_delay_ms(MS_IN_ONE_SECOND);
+}*/
