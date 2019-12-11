@@ -18,7 +18,7 @@
 #define LIMIT_OF_MINUTES 10
 #define MS_IN_ONE_SECOND 1000
 #define TENS_OF_SECONDS_IN_ONE_MINUTE 6
-#define BTN_S1									PC1 // PCINT 9
+#define BTN_S1									PC0 // PCINT 9
 
 int main(void)
 {
@@ -30,11 +30,14 @@ int main(void)
 	TM1637_init(1/*enable*/, 7/*brightness*/);
 	TM1637_clear();
 
+	DDRB &= ~(1 << DDB0);
+
+	PORTB |= (1 << PORTB0);
 /*	GPIO_config_input(&DDRB , BTN_S1);
 
-
-	PCICR |= _BV(PCIE1);
-	PCMSK1 |= _BV(PCINT9);*/
+*/
+	PCICR |= _BV(PCIE0);
+	PCMSK0 |= _BV(PCINT0);
 
 /*	TIM_config_prescaler(TIM1, TIM_PRESC_256);
     TIM_config_interrupt(TIM1, TIM_OVERFLOW_ENABLE);
@@ -63,8 +66,7 @@ int main(void)
 		}
 }
 
-/*ISR(PCINT9_vect)
+ISR(PCINT0_vect)
 {
-
-	_delay_ms(MS_IN_ONE_SECOND);
-}*/
+	_delay_ms(2000);
+}
