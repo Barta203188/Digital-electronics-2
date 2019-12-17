@@ -16,7 +16,6 @@
 #include <stdbool.h>
 #include "tm1637.h"
 #include <avr/interrupt.h>
-#include "gpio.h"
 
 /* Define --------------------------------------------------------------- */
 #define MAX_NUMBER_OF_DIGITS 10
