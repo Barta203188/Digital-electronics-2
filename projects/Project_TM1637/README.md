@@ -1,3 +1,5 @@
 # Project Three-sides-poker-timer
 
-Table of Contents
+#### Table of Contents
+
+  
