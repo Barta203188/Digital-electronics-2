@@ -10,6 +10,8 @@
 
 ## Introduction
 
+Three-sides poker timer controlled by two buttons. There is a choice to count up or count down. The timer counts up to a maximum of nine minutes and fifty-nine seconds. Each of the three displays showing three numbers: minutes, tens of seconds and seconds.
+
 
 ![GitHub](https://github.com/Barta203188/Digital-electronics-2/blob/master/nas-projekt_bb.jpg)
 
