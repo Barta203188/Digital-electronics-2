@@ -26,22 +26,23 @@
 #define BTN_S1					PC0 // PCINT 8
 #define BTN_S2					PC1 // PCINT 9
 
-/* Variables ------------------------------------------------------------- */ 
+/* Global variables ------------------------------------------------------------- */ 
 volatile int c_up = 0;
 volatile int c_down = 0;
 
-/* Functions ------------------------------------------------------------- */ 
+/* Functions -------------------------------------------------------------------- */ 
 int main(void)
 {
+	/* Local variables ------------------------------------------------------- */
 	int seconds = 0;
 	int tens_of_seconds = 0;
 	int minutes = 0;
 
-	int seconds_d = 9;
+	int seconds_d = 9;  
 	int tens_of_seconds_d = 5;
 	int minutes_d = 9;
 
-	int a = 0;
+	int a = 0;	/* display selection after counting */ 
 	
 	TM1637_init(1/*enable*/, 7/*brightness*/);
 	TM1637_clear(); 	/* clear display */
