@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2017-2018, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- *
+ * 
  * This is ATtiny13/25/45/85 library for 4-Digit LED Display based on TM1637 chip.
  *
  * Features:
@@ -15,6 +15,9 @@
  * - documentation: https://github.com/lpodkalicki/attiny-tm1637-library/README.md
  * - TM1637 datasheet: https://github.com/lpodkalicki/attiny-tm1637-library/blob/master/docs/TM1637_V2.4_EN.pdf
  */
+
+/* Modified for ATmega 328p, for three 4 digit seven-segments by: Vomela Roman
+                                                                  Bárta Vojtěch
 
 #ifndef	_ATTINY_TM1637_H_
 #define	_ATTINY_TM1637_H_
