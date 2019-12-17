@@ -21,13 +21,13 @@
 #include <util/delay.h>
 #include "tm1637.h"
 
-#define	TM1637_DIO_HIGH()		(PORTD |= (_BV(TM1637_DIO_PIN) | _BV(TM1637_DIO_PIN_2) | _BV(TM1637_DIO_PIN_3)))
-#define	TM1637_DIO_LOW()		(PORTD &= ~(_BV(TM1637_DIO_PIN) | _BV(TM1637_DIO_PIN_2) | _BV(TM1637_DIO_PIN_3)))
-#define	TM1637_DIO_OUTPUT()		(DDRD |= (_BV(TM1637_DIO_PIN) | _BV(TM1637_DIO_PIN_2) | _BV(TM1637_DIO_PIN_3)))
-#define	TM1637_DIO_INPUT()		(DDRD &= ~(_BV(TM1637_DIO_PIN) | _BV(TM1637_DIO_PIN_2) | _BV(TM1637_DIO_PIN_3)))
-#define	TM1637_DIO_READ() 		(((PIND & (_BV(TM1637_DIO_PIN) | _BV(TM1637_DIO_PIN_2) | _BV(TM1637_DIO_PIN_3))) > 0) ? 1 : 0)
-#define	TM1637_CLK_HIGH()		(PORTD |= (_BV(TM1637_CLK_PIN) | _BV(TM1637_CLK_PIN_2) | _BV(TM1637_CLK_PIN_3)))
-#define	TM1637_CLK_LOW()		(PORTD &= ~(_BV(TM1637_CLK_PIN) | _BV(TM1637_CLK_PIN_2) | _BV(TM1637_CLK_PIN_3)))
+#define	TM1637_DIO_HIGH()		(PORTD |= _BV(TM1637_DIO_PIN))
+#define	TM1637_DIO_LOW()		(PORTD &= ~_BV(TM1637_DIO_PIN))
+#define	TM1637_DIO_OUTPUT()		(DDRD |= _BV(TM1637_DIO_PIN))
+#define	TM1637_DIO_INPUT()		(DDRD &= ~_BV(TM1637_DIO_PIN))
+#define	TM1637_DIO_READ() 		(((PIND & _BV(TM1637_DIO_PIN)) > 0) ? 1 : 0)
+#define	TM1637_CLK_HIGH()		(PORTD |= _BV(TM1637_CLK_PIN))
+#define	TM1637_CLK_LOW()		(PORTD &= ~_BV(TM1637_CLK_PIN))
 
 static void TM1637_send_config(const uint8_t enable, const uint8_t brightness);
 static void TM1637_send_command(const uint8_t value);
@@ -54,8 +54,8 @@ PROGMEM const uint8_t _digit2segments[] =
 void
 TM1637_init(const uint8_t enable, const uint8_t brightness)
 {
-	DDRD |= (_BV(TM1637_DIO_PIN)| _BV(TM1637_CLK_PIN) | _BV(TM1637_DIO_PIN_2)| _BV(TM1637_CLK_PIN_2) | _BV(TM1637_DIO_PIN_3)| _BV(TM1637_CLK_PIN_3));
-	PORTD &= ~(_BV(TM1637_DIO_PIN)| _BV(TM1637_CLK_PIN)| _BV(TM1637_DIO_PIN_2)| _BV(TM1637_CLK_PIN_2) | _BV(TM1637_DIO_PIN_3)| _BV(TM1637_CLK_PIN_3));
+	DDRD |= (_BV(TM1637_DIO_PIN)|_BV(TM1637_CLK_PIN));
+	PORTD &= ~(_BV(TM1637_DIO_PIN)|_BV(TM1637_CLK_PIN));
 	TM1637_send_config(enable, brightness);
 }
 
