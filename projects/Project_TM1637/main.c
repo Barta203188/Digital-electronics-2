@@ -23,8 +23,8 @@
 #define LIMIT_OF_MINUTES 10
 #define MS_IN_ONE_SECOND 1000
 #define TENS_OF_SECONDS_IN_ONE_MINUTE 6
-#define BTN_S1									PC0 // PCINT 8
-#define BTN_S2									PC1 // PCINT 9
+#define BTN_S1					PC0 // PCINT 8
+#define BTN_S2					PC1 // PCINT 9
 
 /* Variables ------------------------------------------------------------- */ 
 volatile int c_up = 0;
