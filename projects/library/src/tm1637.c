@@ -15,6 +15,10 @@
  * - documentation: https://github.com/lpodkalicki/attiny-tm1637-library/README.md
  * - TM1637 datasheet: https://github.com/lpodkalicki/attiny-tm1637-library/blob/master/docs/TM1637_V2.4_EN.pdf
  */
+/*
+/* Modified for ATmega 328p, for three 4 digit seven-segments by: Vomela Roman
+                                                                  Bárta Vojtěch
+*/
 
 #include <avr/io.h>
 #include <avr/pgmspace.h>
