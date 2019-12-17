@@ -133,16 +133,16 @@ int main(void)
 			TM1637_display_digit(1, 9);
 			TM1637_display_colon(1);
 			_delay_ms(1000);
-		
+			a = 0;
 		}
-		else if (a == 2)
+		else if (a == 2 || a == 0)
 		{
 			TM1637_display_digit(3, 0);
 			TM1637_display_digit(2, 0);
 			TM1637_display_digit(1, 0);
 			TM1637_display_colon(1);
 			_delay_ms(1000);
-		
+			a = 0;
 		}
 	}
 }	
