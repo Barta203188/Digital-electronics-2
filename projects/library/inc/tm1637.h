@@ -18,6 +18,7 @@
 
 /* Modified for ATmega 328p, for three 4 digit seven-segments by: Vomela Roman
                                                                   Bárta Vojtěch
+*/
 
 #ifndef	_ATTINY_TM1637_H_
 #define	_ATTINY_TM1637_H_
