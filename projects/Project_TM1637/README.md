@@ -6,8 +6,9 @@
 1. [Introduction](#introduction)
 2. [Hardware](#hardware)
 3. [Software](#software)
-4. [Video](#video)
-5. [References](#references)  
+4. [Presentation](#presentation)
+5. [Video](#video)
+6. [References](#references)  
 
 ## Introduction
 
@@ -31,6 +32,10 @@ wires
 Microsoft Visual Studio 
 
 Fritzing
+
+## Presentation
+
+https://github.com/Barta203188/Digital-electronics-2/blob/master/projects/Project_TM1637/Three-Sides-Poker-Timer.pdf
 
 ## Video
 
