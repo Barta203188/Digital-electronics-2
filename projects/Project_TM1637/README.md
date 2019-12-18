@@ -38,4 +38,4 @@ Fritzing
 2. GitHub repository: https://github.com/Barta203188/Digital-electronics-2
 3. 4-digit seven-segment display: https://navody.arduino-shop.cz/navody-k-produktum/hodinovy-displej-tm1637.html
 4. https://github.com/lpodkalicki/attiny-tm1637-library
-5. Video link: 
+5. Video link: https://www.youtube.com/watch?v=8Ebpnm-DFIQ&feature=youtu.be
