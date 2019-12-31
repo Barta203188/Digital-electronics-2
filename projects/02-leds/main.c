@@ -35,12 +35,10 @@ int main(void)
         if(bit_is_clear(PIND, BTN))
         {
         /* Invert LED and delay */
-        
         //PORTB ^= _BV(LED_GREEN);      /* PORTB = PORTB xor (0010 0000) */
         PORTD ^= _BV(LED_RED);
         _delay_ms(BLINK_DELAY);     /* Wait for several milisecs */
         }
     }
-
     return (0);
 }
