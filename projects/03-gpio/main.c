@@ -26,6 +26,8 @@ int main(void)
     /* Set output pin */
     GPIO_config_output(&DDRB, LED_GREEN);           /* DDRB = DDRB or (0010 0000) */
     GPIO_config_output(&DDRD, LED_RED);
+    GPIO_input_pullup(PORTD, BUTTON);
+    /* Turn LED off */
     GPIO_write(&PORTD, LED_RED, 1);
     GPIO_write(&PORTB, LED_GREEN, 1);
     
