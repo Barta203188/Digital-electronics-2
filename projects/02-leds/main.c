@@ -15,24 +15,10 @@
 /* Includes ----------------------------------------------------------*/
 #include <avr/io.h>
 #include <util/delay.h>
-
-/* Typedef -----------------------------------------------------------*/
-/* Define ------------------------------------------------------------*/
 #define LED_RED     PD2
-//#define LED_GREEN   PB5
 #define BTN         PD3
 #define BLINK_DELAY 500
 
-
-/* Variables ---------------------------------------------------------*/
-/* Function prototypes -----------------------------------------------*/
-
-/* Functions ---------------------------------------------------------*/
-/**
-  * Brief:  Main program. Blink a LED with delay function.
-  * Input:  None
-  * Return: None
-  */
 int main(void)
 {
     /* Set output pin */
