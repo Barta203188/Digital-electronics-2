@@ -45,6 +45,8 @@ int main(void)
 {
     // LCD display
     lcd_init(LCD_DISP_ON);
+    
+    // Display Counter
     lcd_puts("Counter:");
     lcd_gotoxy(0, 1);
     lcd_putc('$');
@@ -56,12 +58,15 @@ int main(void)
 
     sei();
  
-    // Display user-defined characters
+    // Set  pointer  to  beginning  of CG RAM  memory
     lcd_command(1<<LCD_CGRAM);
+    // Store  new  characters  line by line
     for(uint8_t i=0;i<16;i++)
     {
         lcd_data(lcd_user_symbols[i]);
     }
+   
+    //  Display user-defined  characters
     lcd_clrscr();
     for(uint8_t i=0;i<16;i++)
     {
