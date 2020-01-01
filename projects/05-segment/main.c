@@ -20,26 +20,14 @@
 #include "segment.h"
 #include <avr/interrupt.h>
 
-/* Typedef -----------------------------------------------------------*/
-/* Define ------------------------------------------------------------*/
 #define LED_D1          PB5
 #define BTN_S1          PC1 // PCINT 9
 #define BTN_S2          PC2 // PCINT 10
 #define BTN_S3          PC3 // PCINT 11
 
-/* Variables ---------------------------------------------------------*/
-/* Function prototypes -----------------------------------------------*/
-
-/* Functions ---------------------------------------------------------*/
-/**
- *  Brief:  Main program. Shows decimal values ​​on 7-segment display.
- *  Input:  None
- *  Return: None
- */
-    int i = 0;
+int i = 0;
 int main(void)
 {
-    /* D1 led */
     // TODO: Configure D1 led at Multi-Function Shield
     GPIO_config_output(&DDRB , LED_D1);
     /* Pin Change Interrupts 11:9 */
@@ -58,10 +46,8 @@ int main(void)
     GPIO_config_output(&DDRD , SEGMENT_LATCH);
     GPIO_write(&PORTD, SEGMENT_LATCH, 0);    
 
-    /* Enable interrupts by setting the global interrupt mask */
     sei();
 
-    /* Infinite loop */
     for (;;) {
         // TODO: Use function to display digit 1 at position 0
         SEG_putc(i, 0);
@@ -70,18 +56,15 @@ int main(void)
     return (0);
 }
 
-/**
- *  Brief: Pin Change Interrupt 11:9 routine. Toggle a LED.
- */
 ISR(TIMER1_OVF_vect)
 {
     // TODO: Toggle a led
-     i++;
-     SEG_putc(i, 0);
+    GPIO_toggle(&PORTB, LED_D1);
+    i++;
+    SEG_putc(i, 0);
     if(i == 10) 
         {
-            i = 0;
-            
+            i = 0;  
         }
 }
 /*ISR(TIMER0_OVF_vect)
